@@ -150,7 +150,7 @@ export const experiences = [
     role: "Software Engineering Intern",
     date: "MAY — AUG 2026",
     location: "Batavia, Illinois",
-    mark: "F",
+    logo: "fermilab.png",
     text: "Made distributed computing more observable. Instrumented GlideinWMS Factory with Prometheus, aggregated metrics across concurrent processes, and exposed 11 operational metrics for Grafana dashboards.",
     detail:
       "Built and validated a reproducible Docker environment across Factory, Frontend, and Compute Element services on OpenStack, enabling end-to-end HTCondor job submission and systematic debugging.",
@@ -161,7 +161,7 @@ export const experiences = [
     role: "Software Engineering Intern · Full-Stack Developer",
     date: "JUN — AUG 2024",
     location: "Accra, Ghana",
-    mark: "M",
+    logo: "msoft.jpg",
     text: "Connected a school management system with an online learning platform through React features, a MySQL schema, and REST APIs, giving teachers and students a single portal for digital course materials.",
     detail:
       "Built Firebase authentication workflows and worked with an Agile team on responsive dashboards, API testing, Docker, and GitHub CI/CD.",
@@ -172,7 +172,7 @@ export const experiences = [
     role: "Software Engineering Mentee",
     date: "OCT — DEC 2024",
     location: "Remote · Mentorship",
-    mark: "G",
+    logo: "google.png",
     text: "Completed 10 weeks of one-on-one mentorship with Google engineers, solving 20+ algorithmic problems weekly across DFS, binary search, and sorting.",
     detail:
       "Practiced technical communication through mock interviews and completed a CodeSignal technical assessment.",
@@ -183,7 +183,7 @@ export const experiences = [
     role: "Research Assistant · NLP Research",
     date: "OCT 2024 — MAY 2025",
     location: "Grambling, Louisiana",
-    mark: "G",
+    logo: "grambling-mark.png",
     text: "Developed sentiment analysis pipelines with Python, Scikit-learn, and Hugging Face, working on preprocessing, classifier training, and model evaluation across text datasets.",
     detail:
       "Collaborated with research mentors to debug, document, and version experiments with Git and Jupyter for reproducible workflows.",
@@ -191,50 +191,20 @@ export const experiences = [
   },
 ];
 
-export const skillGroups = [
+export const engineeringFocus = [
   {
     title: "Software engineering",
     number: "01",
     text: "Turning ideas into complete, usable products.",
-    skills: [
-      "Python",
-      "TypeScript",
-      "JavaScript",
-      "C++",
-      "Java",
-      "React",
-      "Django",
-      "Git",
-    ],
   },
   {
     title: "Backend & distributed systems",
     number: "02",
     text: "The services, data, and infrastructure behind the interface.",
-    skills: [
-      "REST APIs",
-      "PostgreSQL",
-      "MySQL",
-      "Docker",
-      "Linux",
-      "Prometheus",
-      "Grafana",
-      "OpenStack",
-      "HTCondor",
-    ],
   },
   {
     title: "Mobile & applied AI",
     number: "03",
     text: "Exploring new ways to make software useful.",
-    skills: [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "Firestore",
-      "LangChain",
-      "Chainlit",
-      "Hugging Face",
-    ],
   },
 ];

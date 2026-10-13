@@ -31,6 +31,10 @@ pnpm preview
 | Browser title, sharing description, metadata                     | `index.html`                        |
 | Site icon                                                        | `public/favicon.svg`                |
 
+The education and career development sections are in `src/LearningSections.tsx`, with styles in `src/learning.css`. Edit development takeaways and coursework in `src/learning.ts`.
+
+Organization logos are stored locally in `public/images/logos/`. The Grambling wordmark comes from [the university's website](https://www.gram.edu/_resources/images/_redesign/logo.png); the square Grambling mark comes from your existing public portfolio. Career development artwork and coursework icons are illustrative graphics, not organization logos. The TMCF entry includes your cloud services and NotebookLM learning details.
+
 
 For a new, empty GitHub repository, after reviewing your changes:
 
@@ -43,6 +47,15 @@ git branch -M main
 git remote add origin https://github.com/GideonNeutron/YOUR-REPOSITORY.git
 git push -u origin main
 ```
+
+## Update the technology section
+
+The technology section is maintained in `src/techData.ts`, with its component in
+`src/TechStack.tsx` and styling in `src/techStack.css`. It combines technologies from
+all reference resumes, plus NotebookLM from the Google Cloud mentorship clarification.
+React, TypeScript, and Vite are also credited separately as this website's stack.
+Logo assets are local in `public/images/tech`; their sources and licenses are recorded
+in `ASSET-CREDITS.md`. Update the data file to add, remove, or recategorize technologies.
 
 ## Publish with GitHub Pages when ready
 

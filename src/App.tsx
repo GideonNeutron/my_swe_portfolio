@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { Development, Education } from "./LearningSections";
+import { TechStack } from "./TechStack";
 import {
   ArrowDown,
   ArrowLeft,
@@ -27,12 +29,12 @@ import {
   experiences,
   profile,
   projects,
-  skillGroups,
+  engineeringFocus,
   type Project,
 } from "./content";
 
 const asset = (name: string) => `${import.meta.env.BASE_URL}images/${name}`;
-const navItems = ["Work", "Experience", "About", "Contact"];
+const navItems = ["Work", "Experience", "Stack", "Education", "About", "Contact"];
 const homeTitle = "Gideon Appiah | Software Engineer";
 
 function ExternalLink({
@@ -212,7 +214,10 @@ function Header({
       let current = "";
       for (const item of navItems) {
         const element = document.getElementById(item.toLowerCase());
-        if (element && element.getBoundingClientRect().top <= innerHeight * 0.35)
+        if (
+          element &&
+          element.getBoundingClientRect().top <= innerHeight * 0.35
+        )
           current = item;
       }
       if (scrollY + innerHeight >= document.documentElement.scrollHeight - 4)
@@ -398,9 +403,9 @@ function Home() {
             <img
               className="hero-portrait"
               src={asset("gideon-portrait.jpg")}
-              alt="Gideon Appiah wearing a suit outside a campus building"
-              width="2426"
-              height="3238"
+              alt="Gideon Appiah in a black polo shirt beside a particle physics exhibit"
+              width="1464"
+              height="1462"
               fetchPriority="high"
             />
             <div className="portrait-shade" />
@@ -460,11 +465,16 @@ function Home() {
             description="Building in teams, working through real problems, and getting better with every iteration."
           />
           <div className="experience-list">
-            {experiences.map((experience, index) => (
+            {experiences.map((experience) => (
               <article className="experience-row" key={experience.company}>
-                <div className={`company-mark mark-${index}`}>
-                  {experience.mark}
-                  <span>.</span>
+                <div className="company-logo">
+                  <img
+                    src={asset(`logos/${experience.logo}`)}
+                    alt={`${experience.company} logo`}
+                    width="72"
+                    height="72"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="experience-main">
                   <div className="experience-top">
@@ -484,19 +494,15 @@ function Home() {
               </article>
             ))}
           </div>
-          <div className="development">
-            <span className="mono">ALSO LEARNING WITH</span>
-            <p>
-              NVIDIA Summer Bridge <span>/</span> TMCF Google Cloud{" "}
-              <span>/</span> Amazon Career Prep <span>/</span> IBM
-            </p>
-          </div>
+          <Development />
         </div>
       </section>
+      <TechStack />
+      <Education />
       <section className="section container about-section" id="about">
         <div className="about-story">
           <p className="eyebrow">
-            <span>03</span> / A LITTLE ABOUT ME
+            <span>05</span> / A LITTLE ABOUT ME
           </p>
           <h2>
             I want to help build
@@ -518,30 +524,17 @@ function Home() {
             to observe concurrent processes at Fermilab, I enjoy connecting the
             pieces and understanding why they work.
           </p>
-          <div className="education">
-            <div className="education-symbol">
-              G<span>.</span>
-            </div>
-            <div>
-              <strong>Grambling State University</strong>
-              <p>B.S. Computer Science · Expected May 2028</p>
-              <span>
-                3.90 GPA <i /> Academic Achievement Scholar
-              </span>
-            </div>
-          </div>
         </div>
         <div className="toolkit">
           <p className="mono toolkit-label">
-            <Terminal size={16} /> MY TOOLKIT
+            <Terminal size={16} /> ENGINEERING FOCUS
           </p>
-          {skillGroups.map((group) => (
+          {engineeringFocus.map((group) => (
             <div className="skill-group" key={group.number}>
               <span className="skill-number mono">{group.number}</span>
               <div>
                 <h3>{group.title}</h3>
                 <p>{group.text}</p>
-                <Tags items={group.skills} />
               </div>
             </div>
           ))}
@@ -571,7 +564,7 @@ function Contact() {
       <div className="container contact-inner">
         <div>
           <p className="eyebrow">
-            <span>04</span> / WHAT’S NEXT?
+            <span>06</span> / WHAT’S NEXT?
           </p>
           <h2>
             Let’s build

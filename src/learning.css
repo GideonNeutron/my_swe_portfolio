@@ -1,0 +1,639 @@
+/* Organization marks stay on neutral tiles so their original colors remain legible. */
+.company-logo {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+  display: grid;
+  place-items: center;
+  padding: 9px;
+  background: #fff;
+  border: 1px solid #e4e4ea;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.experience-main {
+  min-width: 0;
+}
+
+/* Career development is a subsection of experience, with a distinct visual rhythm. */
+.development-section {
+  padding-top: 62px;
+}
+.development-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 28px;
+}
+.development-heading h3 {
+  font-size: 31px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+.development-heading > p {
+  max-width: 270px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.development-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.development-card {
+  --program-color: #aacd6c;
+  --program-art-bg: #1b2417;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--bg);
+}
+.program-tmcf {
+  --program-color: #8fbaf4;
+  --program-art-bg: #142238;
+}
+.program-amazon {
+  --program-color: #efb56e;
+  --program-art-bg: #302219;
+}
+.program-ibm {
+  --program-color: #aaacff;
+  --program-art-bg: #201f38;
+}
+.program-art {
+  height: 114px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 23px;
+  padding: 22px 28px;
+  background-color: var(--program-art-bg);
+  background-image: radial-gradient(
+    color-mix(in srgb, var(--program-color) 15%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 12px 12px;
+  color: var(--program-color);
+  border-bottom: 1px solid var(--line);
+}
+.program-art-orbit {
+  width: 64px;
+  height: 64px;
+  border: 1px solid color-mix(in srgb, var(--program-color) 35%, transparent);
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: var(--program-art-bg);
+  position: relative;
+  z-index: 1;
+}
+.program-art-orbit::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 38px;
+  background: var(--program-color);
+  left: 100%;
+  opacity: 0.4;
+}
+.program-art > .mono {
+  margin-left: auto;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  position: relative;
+  z-index: 1;
+}
+.program-art-track {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 4px;
+}
+.program-art-track i {
+  width: 4px;
+  height: 13px;
+  background: var(--program-color);
+  opacity: 0.4;
+}
+.program-art-track i:nth-child(2),
+.program-art-track i:nth-child(4) {
+  height: 24px;
+  opacity: 0.6;
+}
+.program-art-track i:nth-child(3) {
+  height: 37px;
+  opacity: 0.8;
+}
+.program-art-corner {
+  position: absolute;
+  top: -45px;
+  right: -15px;
+  width: 150px;
+  height: 150px;
+  border: 1px solid var(--program-color);
+  border-radius: 50%;
+  opacity: 0.1;
+}
+.program-body {
+  padding: 27px 28px 26px;
+}
+.program-organization {
+  color: var(--purple);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+.program-body h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 23px;
+  font-weight: 500;
+  letter-spacing: -0.7px;
+  line-height: 1.3;
+  margin: 9px 0;
+}
+.program-type {
+  color: var(--subtle);
+  font-size: 8px;
+  letter-spacing: 0.8px;
+}
+.program-summary {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 17px;
+}
+.program-lessons {
+  padding: 0;
+  margin: 17px 0 22px;
+  list-style: none;
+}
+.program-lessons li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-top: 10px;
+}
+.program-lessons li::before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--purple);
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+.program-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding: 17px 0 0;
+  margin: 0;
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+.program-topics li {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+/* Education has its own university feature and an illustrated course grid. */
+.education-section {
+  border-bottom: 1px solid var(--line);
+}
+.education-section .section-heading h2 {
+  max-width: 680px;
+}
+.university-card {
+  display: grid;
+  grid-template-columns: 0.85fr 1.5fr;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  overflow: hidden;
+  background: var(--panel);
+}
+.university-identity {
+  background: #17160f;
+  color: #e0aa0f;
+  padding: 43px 33px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border-right: 1px solid #373024;
+}
+.university-identity > img {
+  width: min(100%, 280px);
+  height: auto;
+  object-fit: contain;
+}
+.university-identity > p {
+  margin-top: 17px;
+  color: #c5b577;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
+.university-illustration {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid #3e3521;
+  width: 100%;
+}
+.university-illustration > svg {
+  opacity: 0.7;
+}
+.university-illustration > span {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 8px;
+  line-height: 1.8;
+  letter-spacing: 1.5px;
+  max-width: 100px;
+}
+.university-detail {
+  padding: 35px 40px;
+}
+.degree-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--subtle);
+}
+.degree-topline > .mono {
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+.degree-topline > a {
+  display: grid;
+  place-items: center;
+  min-width: 34px;
+  min-height: 34px;
+  color: var(--purple);
+  border: 1px solid var(--line);
+  border-radius: 50%;
+}
+.university-detail h3 {
+  font-size: clamp(23px, 2.5vw, 32px);
+  letter-spacing: -1px;
+  margin: 14px 0 8px;
+}
+.degree-name {
+  font-size: 15px;
+  color: var(--muted);
+}
+.education-facts {
+  display: flex;
+  gap: 38px;
+  margin: 27px 0;
+}
+.education-facts > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.education-facts > div + div {
+  border-left: 1px solid var(--line);
+  padding-left: 38px;
+}
+.education-facts strong {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 29px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.8px;
+}
+.education-facts span {
+  font-family: "IBM Plex Mono", monospace;
+  color: var(--subtle);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.academic-honors {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 21px;
+}
+.academic-honors > svg {
+  color: var(--purple);
+}
+.academic-honors strong {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+}
+.academic-honors span {
+  display: block;
+  margin-top: 7px;
+  font-size: 10px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.coursework-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 41px 0 22px;
+}
+.coursework-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  letter-spacing: -0.5px;
+}
+.coursework-heading h3 svg {
+  color: var(--purple);
+}
+.coursework-heading > .mono {
+  color: var(--subtle);
+  font-size: 8px;
+}
+.coursework-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+.course-card {
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  overflow: hidden;
+  background: var(--panel);
+  padding: 20px;
+}
+.course-illustration {
+  color: var(--purple);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 13px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+}
+.course-illustration > .mono {
+  font-size: 7px;
+  letter-spacing: 0.2px;
+  color: var(--subtle);
+}
+.course-cloud .course-illustration,
+.course-brain .course-illustration,
+.course-calculus .course-illustration {
+  color: var(--turquoise);
+}
+.course-card h4 {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.45;
+  letter-spacing: -0.2px;
+  margin: 0 0 9px;
+}
+.course-card p {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+@media (max-width: 1000px) {
+  .program-art {
+    padding-inline: 22px;
+    gap: 16px;
+  }
+  .program-art-track {
+    display: none;
+  }
+  .program-art > .mono {
+    font-size: 7px;
+    letter-spacing: 1px;
+  }
+  .program-body {
+    padding: 24px;
+  }
+  .university-card {
+    grid-template-columns: 0.8fr 1.2fr;
+  }
+  .university-identity {
+    padding: 35px 25px;
+  }
+  .university-detail {
+    padding: 27px;
+  }
+  .education-facts {
+    gap: 23px;
+  }
+  .education-facts > div + div {
+    padding-left: 23px;
+  }
+  .education-facts strong {
+    font-size: 25px;
+  }
+  .coursework-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 800px) {
+  .company-logo {
+    width: 58px;
+    height: 58px;
+    flex-basis: 58px;
+    padding: 7px;
+  }
+  .development-heading {
+    display: block;
+  }
+  .development-heading > p {
+    max-width: 450px;
+    margin-top: 15px;
+  }
+  .development-heading h3 {
+    font-size: 28px;
+  }
+  .program-body h4 {
+    font-size: 21px;
+  }
+  .program-art-orbit {
+    width: 53px;
+    height: 53px;
+  }
+  .program-art > .mono {
+    max-width: 140px;
+    text-align: right;
+    line-height: 1.7;
+  }
+  .university-card {
+    grid-template-columns: 1fr;
+  }
+  .university-identity {
+    padding: 29px;
+    border-right: 0;
+    border-bottom: 1px solid #373024;
+    position: relative;
+  }
+  .university-identity > img {
+    width: 245px;
+    max-width: 65%;
+  }
+  .university-illustration {
+    position: absolute;
+    right: 29px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    border: 0;
+    padding: 0;
+    margin: 0;
+  }
+  .university-illustration > span {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .experience-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+  .company-logo {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+  .development-section {
+    padding-top: 42px;
+  }
+  .development-heading .eyebrow {
+    line-height: 1.9;
+  }
+  .development-heading h3 {
+    font-size: 26px;
+  }
+  .development-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .program-art {
+    height: 100px;
+    padding: 20px 24px;
+  }
+  .program-art-track {
+    display: flex;
+  }
+  .program-art > .mono {
+    max-width: 120px;
+    margin-left: auto;
+  }
+  .program-body {
+    padding: 25px 23px;
+  }
+  .program-summary {
+    font-size: 13px;
+  }
+  .program-lessons li {
+    font-size: 12px;
+  }
+  .education-section .section-heading h2 {
+    font-size: 33px;
+  }
+  .university-identity {
+    padding: 26px 23px;
+  }
+  .university-identity > img {
+    max-width: 72%;
+  }
+  .university-identity > p {
+    font-size: 7px;
+  }
+  .university-illustration {
+    right: 18px;
+  }
+  .university-illustration svg {
+    width: 46px;
+    height: 46px;
+  }
+  .university-detail {
+    padding: 25px 23px;
+  }
+  .degree-topline > .mono {
+    font-size: 8px;
+  }
+  .university-detail h3 {
+    font-size: 26px;
+    line-height: 1.25;
+  }
+  .degree-name {
+    font-size: 13px;
+  }
+  .education-facts {
+    gap: 20px;
+  }
+  .education-facts > div + div {
+    padding-left: 20px;
+  }
+  .education-facts strong {
+    font-size: 24px;
+  }
+  .education-facts span {
+    font-size: 7px;
+    letter-spacing: 0.5px;
+    line-height: 1.6;
+  }
+  .coursework-heading {
+    margin-top: 32px;
+  }
+  .coursework-heading h3 {
+    font-size: 18px;
+  }
+  .coursework-heading > .mono {
+    display: none;
+  }
+  .coursework-grid {
+    gap: 12px;
+  }
+  .course-card {
+    padding: 16px 13px;
+  }
+  .course-card h4 {
+    font-size: 13px;
+  }
+  .course-card p {
+    font-size: 10px;
+  }
+  .course-illustration > .mono {
+    font-size: 6px;
+    letter-spacing: -0.2px;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 360px) {
+  .program-art-track {
+    display: none;
+  }
+  .coursework-grid {
+    grid-template-columns: 1fr;
+  }
+  .course-card {
+    padding: 21px;
+  }
+  .course-card h4 {
+    font-size: 16px;
+  }
+  .course-card p {
+    font-size: 12px;
+  }
+  .course-illustration > .mono {
+    font-size: 8px;
+  }
+}

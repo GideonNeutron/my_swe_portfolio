@@ -365,7 +365,7 @@ main:focus {
   height: 100%;
   width: 100%;
   object-fit: cover;
-  object-position: 50% 27%;
+  object-position: 70% center;
   filter: grayscale(100%);
   transition: filter 0.65s;
 }
@@ -855,29 +855,7 @@ main:focus {
 .experience-row:first-child {
   padding-top: 0;
 }
-.company-mark {
-  width: 48px;
-  height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 24px;
-  color: var(--purple);
-  background: var(--soft-purple);
-  flex-shrink: 0;
-}
-.company-mark span {
-  color: var(--turquoise);
-}
-.mark-1 {
-  color: var(--turquoise);
-}
-.mark-3 {
-  color: #d8b869;
-}
+
 .experience-main {
   flex: 1;
 }
@@ -921,25 +899,7 @@ main:focus {
 .experience-main .tags {
   margin: 17px 0 0;
 }
-.development {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  margin-top: 31px;
-}
-.development > .mono {
-  font-size: 8px;
-  color: var(--subtle);
-  flex-shrink: 0;
-}
-.development > p {
-  font-size: 11px;
-  color: var(--muted);
-}
-.development > p > span {
-  padding: 0 10px;
-  color: var(--line);
-}
+
 .about-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -960,46 +920,7 @@ main:focus {
   color: var(--text);
   margin-bottom: 21px;
 }
-.education {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-  border-top: 1px solid var(--line);
-  padding-top: 24px;
-  margin-top: 30px;
-}
-.education-symbol {
-  font-family: "Space Grotesk", sans-serif;
-  font-size: 32px;
-  color: var(--text);
-  font-weight: 700;
-}
-.education-symbol > span {
-  color: var(--purple);
-}
-.education strong {
-  font-size: 12px;
-  font-weight: 500;
-}
-.education p {
-  font-size: 10px;
-  color: var(--muted);
-  margin-top: 4px;
-}
-.education div > span {
-  font-size: 9px;
-  color: var(--subtle);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 7px;
-}
-.education i {
-  width: 3px;
-  height: 3px;
-  border-radius: 50%;
-  background: var(--purple);
-}
+
 .toolkit {
   border: 1px solid var(--line);
   border-radius: 6px;
@@ -1624,12 +1545,7 @@ main:focus {
   .experience-date {
     font-size: 9px;
   }
-  .development {
-    display: block;
-  }
-  .development > p {
-    margin-top: 10px;
-  }
+
   .about-section {
     grid-template-columns: 1fr;
     gap: 40px;
@@ -1774,7 +1690,7 @@ main:focus {
     height: 390px;
   }
   .hero-portrait {
-    object-position: center 24%;
+    object-position: 70% center;
   }
   .portrait-caption {
     left: 24px;
@@ -1924,12 +1840,7 @@ main:focus {
     gap: 15px;
     padding-block: 26px;
   }
-  .company-mark {
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-    border-radius: 5px;
-  }
+
   .experience-top {
     flex-direction: column;
     gap: 10px;
@@ -1963,13 +1874,7 @@ main:focus {
     font-size: 8px;
     padding: 5px 7px;
   }
-  .development > p {
-    font-size: 10px;
-    line-height: 2;
-  }
-  .development > p > span {
-    padding: 0 6px;
-  }
+
   .about-section {
     gap: 35px;
   }
@@ -1995,12 +1900,7 @@ main:focus {
   .skill-group .tags li {
     font-size: 9px;
   }
-  .education {
-    gap: 14px;
-  }
-  .education div > span {
-    font-size: 8px;
-  }
+
   .contact-section {
     padding: 50px 0 36px;
   }
