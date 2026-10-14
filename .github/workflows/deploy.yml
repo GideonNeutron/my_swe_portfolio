@@ -1,8 +1,10 @@
 name: Deploy portfolio to GitHub Pages
 
-# Deployment is intentionally manual until you are ready to publish.
+# Deployment is now automatically triggered
 on:
-  workflow_dispatch:
+  push:
+    branches: ["main"]   # Trigger automatically whenever changes hit the main branch
+  workflow_dispatch:     # Keeps the manual button active just in case
 
 permissions:
   contents: read
